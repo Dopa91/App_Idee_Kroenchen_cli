@@ -2,10 +2,14 @@ import 'dart:io';
 
 void main() {
   print("Herzlich Wilkommen! \nIch freue mich dich begrüßen zu dürfen!");
+  print("");
+
   bool appIsRunning = true;
   while (appIsRunning) {
-    print(
-        "Was möchtest du als nächstes tuen? \nDie App schließen? (Beenden) \nDich einloggen? (Einloggen) \noder \nNeu Registrieren? (Registrieren)");
+    print("Was möchtest du als nächstes tuen?");
+    print("");
+    print("Die App schließen? (Beenden) \nDich einloggen? (Einloggen) \noder \nNeu Registrieren? (Registrieren)");
+
     String? userInput = stdin.readLineSync();
 
     switch (userInput) {
