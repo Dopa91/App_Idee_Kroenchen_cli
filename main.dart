@@ -1,5 +1,11 @@
 import 'dart:io';
 
+// Was soll in mein cli Programm
+// Login mit Password
+// Register
+// Neuen Tagebucheintrag erstellen
+// Beenden
+
 void main() {
   print("Herzlich Wilkommen! \nIch freue mich dich begrüßen zu dürfen!");
   print("");
@@ -8,14 +14,14 @@ void main() {
   while (appIsRunning) {
     print("Was möchtest du als nächstes tuen?");
     print("");
-    print("Die App schließen? (Beenden) \nDich einloggen? (Einloggen) \noder \nNeu Registrieren? (Registrieren)");
+    print("Die App schließen? (B)eenden) \nDich einloggen? (E)inloggen) \noder \nNeu Registrieren? (R)egistrieren)");
 
     String? userInput = stdin.readLineSync();
 
     switch (userInput) {
-      case "Beenden" || "beenden":
+      case "Beenden" || "beenden" || "b" || "B":
         appIsRunning = false;
-      case "Einloggen" || "einloggen":
+      case "Einloggen" || "einloggen" || "e" || "E":
         print("Bitte Username eingeben");
         String? username = stdin.readLineSync();
 
@@ -31,11 +37,20 @@ void main() {
             case "1":
             print("Dann wollen wir mal, wie geht es dir heute?");
             stdin.readLineSync()!;
+            case "2":
+            print("Wann ist der Termin ?");
+            stdin.readLineSync()!;
+            print("");
+            print("Und was findest an dem Termin stat?");
+            stdin.readLineSync()!;
+            print("");
+            print("Alles klar!, Termin ist eingetragen!");
+            appIsRunning = true;
           }
         } else {
           print("User existiert nicht. Registreie dich bitte. :)");
         }
-      case "Registrieren" || "registrieren":
+      case "Registrieren" || "registrieren" || "r" || "R":
         print("Die Server ist momenten leider offline :(");
         appIsRunning = false;
       default: 
