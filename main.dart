@@ -35,8 +35,11 @@ void main() {
           String? userInputMenu = stdin.readLineSync();
           switch (userInputMenu) {
             case "1":
-            print("Dann wollen wir mal, wie geht es dir heute?");
+            print("Dann wollen wir mal begeinnen, wie geht es dir heute? \nWie war dein Tag");
             stdin.readLineSync()!;
+            print("");
+            stdin.readLineSync()!;
+
             case "2":
             print("Wann ist der Termin ?");
             stdin.readLineSync()!;
