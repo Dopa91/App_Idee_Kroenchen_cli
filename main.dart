@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:math';
 
 // Was soll in mein cli Programm
 // Login mit Password
@@ -37,8 +38,24 @@ void main() {
             case "1":
             print("Dann wollen wir mal begeinnen, wie geht es dir heute? \nWie war dein Tag");
             stdin.readLineSync()!;
+            print("Tagebucheintrag gespeichert!");
             print("");
-            stdin.readLineSync()!;
+            print("Was möchtest du als nächstes tuen? Neuen Termin eintragen (New) Hauptmenü (H) App beenden (B)");
+            
+            String? newUserInput = stdin.readLineSync()!;
+            switch (newUserInput) {
+              case "New":
+              print("Dann wollen wir mal begeinnen, wie geht es dir heute? \nWie war dein Tag");
+              stdin.readLineSync()!;
+              print("");
+              print("Tagebucheintrag gespeichert!");
+              print("");
+              appIsRunning = true;
+              case "H":
+              appIsRunning = true;
+              case "Beenden" || "beenden" || "b" || "B":
+              appIsRunning = false; 
+            }
 
             case "2":
             print("Wann ist der Termin ?");
