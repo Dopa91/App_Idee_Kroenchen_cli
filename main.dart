@@ -42,18 +42,18 @@ void main() {
             stdin.readLineSync();
             print("Tagebucheintrag gespeichert!");
             print("");
-            print("Was möchtest du als nächstes tuen? Neuen Termin eintragen (1) Hauptmenü (H) App beenden (B)");
+            print("Was möchtest du als nächstes tuen?\nTagebucheintrag ergänzen (1) Hauptmenü (H) App beenden (B)");
             
             String? newUserInput = stdin.readLineSync();
             switch (newUserInput) {
               case "1":
-              print("Dann wollen wir mal begeinnen, wie geht es dir heute? \nWie war dein Tag");
+              print("Was möchtest du noch hinzufügen, was hast du vergessen? :)");
               stdin.readLineSync()!;
               print("");
               print("Tagebucheintrag gespeichert!");
               print("");
               userIsLoggedIn = true;
-              case "H":
+              case "H" || "h":
               userIsLoggedIn = true;
               case "Beenden" || "beenden" || "b" || "B":
               userIsLoggedIn = false;
