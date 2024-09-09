@@ -7,7 +7,7 @@ import 'dart:io';
 // Beenden
 
 void main() {
-  print("Herzlich Wilkommen! \nIch freue mich dich begrüßen zu dürfen!");
+  print("Herzlich Willkommen! \nIch freue mich dich begrüßen zu dürfen!");
   print("");
 
   bool appIsRunning = true;
@@ -31,6 +31,9 @@ void main() {
         if (username == "Andreas" && password == "Dopatka") {
           print("Willkommen zurück, Andreas!");
           print("");
+          bool userIsLoggedIn = true;
+
+          while (userIsLoggedIn) {
           print("Menüpunkte: Neuer Tagebucheinrag (1) oder Neuen Termin eintragen (2) Zum beenden der App (B) ");
           String? userInputMenu = stdin.readLineSync();
           switch (userInputMenu) {
@@ -39,21 +42,22 @@ void main() {
             stdin.readLineSync();
             print("Tagebucheintrag gespeichert!");
             print("");
-            print("Was möchtest du als nächstes tuen? Neuen Termin eintragen (New) Hauptmenü (H) App beenden (B)");
+            print("Was möchtest du als nächstes tuen? Neuen Termin eintragen (1) Hauptmenü (H) App beenden (B)");
             
             String? newUserInput = stdin.readLineSync();
             switch (newUserInput) {
-              case "New":
+              case "1":
               print("Dann wollen wir mal begeinnen, wie geht es dir heute? \nWie war dein Tag");
               stdin.readLineSync()!;
               print("");
               print("Tagebucheintrag gespeichert!");
               print("");
-              appIsRunning = true;
+              userIsLoggedIn = true;
               case "H":
-              appIsRunning = true;
+              userIsLoggedIn = true;
               case "Beenden" || "beenden" || "b" || "B":
-              appIsRunning = false; 
+              userIsLoggedIn = false;
+              appIsRunning = false;
             }
 
             case "2":
@@ -64,17 +68,22 @@ void main() {
             stdin.readLineSync();
             print("");
             print("Alles klar!, Termin ist eingetragen!");
-            appIsRunning = true;
+            userIsLoggedIn = true;
+            case "Beenden" || "beenden" || "b" || "B":
+            userIsLoggedIn = false;
+            appIsRunning = false;
+          }
           }
         } else {
           print("User existiert nicht. Registreie dich bitte. :)");
+        
         }
       case "Registrieren" || "registrieren" || "r" || "R":
         print("Die Server ist momenten leider offline :(");
         appIsRunning = false;
       default: 
       print("Ich versteht nur Banhof...");
-        appIsRunning = false;
+        appIsRunning = true;
 
     }
   }
